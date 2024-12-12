@@ -1,0 +1,64 @@
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+.blob2 {
+    background-color: #D9DEEF;
+    background-image: url(/assets/blob2-top-corner.png), url(/assets/blob2-bottom-corner.png);
+    background-position: top left, bottom right;
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto, auto;
+}
+
+ion-icon {
+    font-size: 24px;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient-background {
+    animation: gradientBackground 15s ease infinite;
+}

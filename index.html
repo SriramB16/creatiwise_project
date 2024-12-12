@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+     -
+     <!-- <link rel="stylesheet" href="newstyles.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_drop_down" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_right" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Forum&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <!-- poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Forum&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <title>patientgrid</title>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="#" class="text-blue-500 text-3xl font-bold flex items-center">
+                    <img src="./assets/logo.png" />
+                    <span class="ml-2 font-semibold text-[#333]">patientgrid</span>
+                </a>
+            </div>
+
+            <!-- Center Links -->
+            <div class="hidden md:flex flex-grow justify-center">
+                <ul class="flex items-center space-x-6 text-sm text-gray-600">
+                    <li><a href="#" class="hover:text-blue-600">Products</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Plans</a></li>
+                    <li class="relative group">
+                        <a href="#" class="flex items-center hover:text-blue-600">
+                            More
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 0 1 1.06-.02L10 10.65l3.71-3.46a.75.75 0 1 1 1.02 1.1l-4.25 4a.75.75 0 0 1-1.02 0l-4.25-4a.75.75 0 0 1-.02-1.08z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <!-- Dropdown -->
+                        <div
+                            class="absolute left-0 hidden group-hover:block bg-white shadow-md mt-1 w-40 rounded-md py-2">
+                            <a href="#"
+                                class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">Option 1</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-gray-600 hover:bg-gray-100 hover:text-blue-600">Option 2</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Section -->
+            <div class="hidden md:flex items-center">
+                <a href="#" class="text-sm text-gray-600 hover:text-blue-600 mr-4">Login</a>
+                <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Request a demo</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M3 5h14a1 1 0 0 1 0 2H3a1 1 0 1 1 0-2zM3 9h14a1 1 0 0 1 0 2H3a1 1 0 1 1 0-2zM3 13h14a1 1 0 0 1 0 2H3a1 1 0 1 1 0-2z"
+                            clip-rule="evenodd" />
+                    </svg> -->
+                    <ion-icon id="menu-icon" name="menu-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-blue-500 md:hidden">
+            <ul class="text-white text-sm">
+                <li><a href="#" class="block px-4 py-2 hover:bg-blue-600">Products</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-blue-600">Plans</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-blue-600">More</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-blue-600">Login</a></li>
+                <li class="pb-2"><a href="#"
+                        class="block px-4 py-2 bg-white text-blue-500 rounded-3xl mx-4 my-2 text-center hover:bg-blue-600 hover:text-white">Request
+                        a demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- hero text -->
+
+        <div class="poppins-medium  text-[#333] px-[3%] text-center md:mx-auto mt-20 leading-8 md:leading-[84px] mb-16">
+            <div class="md:mt-20px md:mx-auto ">
+                <h1 class="text-[28px] md:text-[60px]">Medical software to attarct and <strong>retain patients</strong>
+                </h1>
+                <p class="text-[16px] leading-[22px] mt-5 mb-[10px] text-[#282828b3]">Patientgrid’s communication
+                    platform
+                    helps improve patient experience while staff hours.</p>
+            </div>
+
+            <button
+                class="relative group flex  items-center px-4 py-2 mx-auto mt-5 text-black text-[22px] leading-5 font-medium bg-transparent hover:bg-transparent border-none">
+                Get a demo
+                <span
+                    class="material-symbols-outlined bg-[#2a0896] text-white rounded-full p-1 flex  ml-2 group-hover:translate-x-2 transform transition duration-200">
+                    chevron_right
+                </span>
+            </button>
+            <!-- </div> -->
+        </div>
+
+        <!-- hero image -->
+        
+        <div class="w-full h-[200px] md:h-[250px] lg:h-[300px] relative">
+            <div 
+                class="absolute inset-0 transform skew-y-6 flex items-center justify-center origin-left animate-gradient-background"
+                style="height: 110%; bottom: -5%; background-image: linear-gradient(-45deg, #87CEFA, #2A0896, #2A0896, #87CEFA); background-size: 400% 400%;"
+            >
+                <div class="relative  overflow-hidden rounded-lg shadow-[0_0_20px_5px_rgba(0,0,0,0.3)] transform -skew-y-6 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[70%]">
+                    <img src="https://uploads-ssl.webflow.com/6459f79f6165ba41634327ec/645a0ab54a8b00985f9493f3_Home.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 83vw, (max-width: 991px) 91vw, (max-width: 1130px) 100vw, 1130px" srcset="https://uploads-ssl.webflow.com/6459f79f6165ba41634327ec/645a0ab54a8b00985f9493f3_Home-p-500.jpg 500w, https://uploads-ssl.webflow.com/6459f79f6165ba41634327ec/645a0ab54a8b00985f9493f3_Home-p-800.jpg 800w, https://uploads-ssl.webflow.com/6459f79f6165ba41634327ec/645a0ab54a8b00985f9493f3_Home-p-1080.jpg 1080w, https://uploads-ssl.webflow.com/6459f79f6165ba41634327ec/645a0ab54a8b00985f9493f3_Home.jpg 1130w" alt="" class="image">
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- content-1 -->
+
+        <section class="poppins-medium md:mt-56 mt-36">
+            <div class="flex flex-col md:flex-row justify-center items-center py-5 px-[3%] gap-4">
+                <div>
+                    <img src="./assets/card1.png" alt="high rated" />
+                </div>
+                <div class="text-center  text-[#333] md:w-96 md:ml-10">
+                    <h3 class="text-[22px] font-medium leading-[30px] mb-[10px] md:text-[32px] md:leading-[45px]">Bring
+                        new business in by getting more
+                        online reviews</h3>
+                    <p class="text-base text-[#282828b3] my-[10px] md:mt-7 md:text-[22px]">94% Use review to choose new
+                        doctor</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- content -2  -->
+
+        <section>
+            <div class="flex flex-col md:flex-row-reverse justify-center items-center py-5 px-[3%] gap-4">
+                <div>
+                    <img src="./assets/content2.png" alt="time save" />
+                </div>
+                <div class="text-center poppins-medium text-[#333] md:w-96 md:mr-10">
+                    <h3 class="text-[22px] font-medium leading-[30px] mb-[10px] md:text-[32px] md:leading-[45px]">Save
+                        time with collaborative tools and
+                        automations</h3>
+                    <p class="text-base text-[#282828b3] my-[10px] md:mt-7 md:text-[22px]">15+ staff hours saved per
+                        week</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- content - 3 -->
+
+        <section>
+            <div class="flex flex-col md:flex-row justify-center items-center py-5 px-[3%] gap-4">
+                <div>
+                    <img src="./assets/card3.png" alt="" />
+                </div>
+                <div class="text-center poppins-medium text-[#333] md:w-96 md:ml-10">
+                    <h3 class="text-[22px] font-medium leading-[30px] mb-[10px] md:text-[32px] md:leading-[45px]">
+                        Improve patients experience engaging
+                        the way they want</h3>
+                    <p class="text-base text-[#282828b3] my-[10px]  md:mt-7 md:text-[22px]">90% People prefer texts to
+                        phone calls.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- content-4 -->
+
+        <section class="bg-[#DDE9FF] mx-3 rounded-3xl md:mx-20">
+            <div class="py-[30px] px-5 flex flex-col md:flex-row-reverse justify-center items-center">
+                <div class="pb-4 flex-1">
+                    <img src="./assets/mainContent-1.png" alt="" />
+                </div>
+                <div class="md:pl-6  poppins-medium text-black text-left md:text-start flex-1">
+                    <h3 class="text-[22px] font-medium leading-[30px] mb-[10px] md:text-[37px] md:leading-[45px]">
+                        Seamless collaboration for healthcare
+                        teams</h3>
+                    <p class="text-base text-[#282828b3] my-[10px] md:text-lg">With shared inboxes, any team member can
+                        resolve the
+                        team’s pending tasks. Individual staff member don’t get overwhelmed and patients are always take
+                        care of.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- content-5 -->
+
+        <section class="bg-[#BCEEEC] mx-3 rounded-3xl md:mx-20  mt-[60px]">
+            <div class="py-[30px] px-5 flex flex-col md:flex-row justify-center items-center">
+                <div class="pb-4 flex-1">
+                    <img src="./assets/mainContent-2.png" alt="" />
+                </div>
+                <div class="md:pl-6  poppins-medium text-black text-left flex-1 md:text-start">
+                    <h3 class="text-[22px] font-medium leading-[30px] mb-[10px] md:text-[37px] md:leading-[45px]">Seamless collaboration for healthcare
+                        teams</h3>
+                    <p class="text-base text-[#282828b3] my-[10px] md:text-lg">With shared inboxes, any team member can resolve the
+                        team’s pending tasks. Individual staff member don’t get overwhelmed and patients are always take
+                        care of.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- content-7 -->
+
+        <section class=" mt-[60px] px-[3%]  flex flex-row justify-center items-center">
+            <div class="flex flex-col-reverse md:flex-row justify-center items-center py-[30px] px-5">
+                <div class="pb-4 flex-1">
+                    <img src="./assets/mainContent-4.png" alt="" />
+                </div>
+                <div class="text-center poppins-medium text-[#333] flex-1 md:text-left md:pl-8">
+                    <h3 class="text-[22px] font-medium leading-[30px] mb-[10px]  md:text-[37px] md:leading-[45px]">Discover actionable insights</h3>
+                    <p class="text-base text-[#282828b3] my-[10px]">With advanced reporting gain full insight of your
+                        communication work flow so you can address any matters preventing you from delivering the best
+                        patient experience possible.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- content-8 -->
+
+        <section class="blob2 mx-2 rounded-3xl  my-[60px]">
+            <div class=" px-5 flex flex-col-reverse md:flex-row justify-center items-center">
+                <div class="flex-1 mt-5">
+                    <img src="./assets/doctorImg.png" alt="" class="w-full h-auto"/>
+                </div>
+                <div class="poppins-medium text-[#333] text-center flex-1 md:text-center md:pl-8 md:pr-24">
+                    <h3 class="text-2xl font-medium leading-[34px] mt-5 mb-[10px] md:text-[37px] md:leading-[45px]">We work on a month-to-month basis, try for free with no commitments</h3>
+                    <p class="poppins-regular text-base  my-[10px] leading-[22px] mb-5">Ensure nothing falls through a crack.
+                        When you are tied up and callers can’t reach your front desk, Patient grid will send a text
+                        asking how your patience can help.</p>
+                        <button class="bg-[#2A52BE] text-white px-4 py-2 rounded-full hover:bg-[#2A0896]">14 day free trial</button>
+                </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#2A0896] text-white poppins-medium">
+        <div class="pt-10 pb-5">
+            <div class="px-[3%] flex flex-col md:flex-row justify-evenly items-center my-7 text-lg">
+                <div>
+                    <div class="flex flex-row  justify-center ">
+                        <a href="#">
+                            <img src="./assets/footerlogo.png" alt="footer logo" />
+                        </a>
+                    </div>
+                    <div class="py-5 flex flex-row  justify-center">
+                        <p>Helping you deliver exceptional care.</p>
+                    </div>
+                </div>
+                <div class="gap-3 flex flex-col">
+                    <div class="flex flex-row justify-center gap-2">
+                        <span>
+                            <ion-icon name="call"></ion-icon>
+                        </span>
+                        <p>(123) 456 7890</p>
+                    </div>
+                    <div class="flex flex-row  justify-center gap-2">
+                        <span>
+                            <ion-icon name="mail"></ion-icon>
+                        </span>
+                        <p></p>someone@example.com
+                    </div>
+                </div>
+                <div class="text-center pb-4 pt-4 flex flex-col" >
+                    <label>subscribe to our newsletter</label>
+                    <div class="relative w-full">
+                        <input type="email" placeholder="Email" class="rounded-3xl px-3 py-3 mt-3 w-full text-black" />
+                        <button class="absolute right-[0] top-[38px] transform -translate-y-1/2 bg-[#2A52BE] rounded-full p-3 cursor-pointer hover:bg-blue-500">
+                               <span class="text-white text-xl">→</span>
+                           </button>
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            <div>
+                <ul class="flex justify-around m-auto border-y-[1px] py-5">
+                    <li><a href="#" class="hover:text-black">Products</a></li>
+                    <li><a href="#" class="hover:text-black">plans</a></li>
+                    <li><a href="#" class="hover:text-black">More</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="text-center pt-4">Copyright 2023. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+
+            if (menuIcon.getAttribute('name') === 'menu-outline') {
+            menuIcon.setAttribute('name', 'close-outline');
+        } else {
+            menuIcon.setAttribute('name', 'menu-outline');
+        }
+        });
+
+    
+    </script>
+</body>
+
+
+</html>
